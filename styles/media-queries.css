@@ -305,6 +305,14 @@
     .section.contact .text .content {
         max-width: none;
     }
+    .section.references,
+    .section.personalwork {
+        grid-template-columns: var(--grid--app-columns-1); /* Use single column layout */
+    }
+    .section.references > .content,
+    .section.personalwork > .content {
+        grid-template-columns: var(--grid--app-columns-1); /* Use single column layout */
+    }
 }
 
 /* Short height */
