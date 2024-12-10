@@ -35,14 +35,14 @@ $(document).ready(function() {
     }
 
     //ChatgptAdd
-    // Make the grid visible after the section with class 'section cover' is loaded
-    $(window).on('load', function() {
-        if ($('.section.cover').length > 0) {
-            setTimeout(function() {
-                $('.app-grid-overlay').addClass('is--visible');
-            }, 3000); // Adjust the delay as needed
-        }
-    });
+    // // Make the grid visible after the section with class 'section cover' is loaded
+    // $(window).on('load', function() {
+    //     if ($('.section.cover').length > 0) {
+    //         setTimeout(function() {
+    //             $('.app-grid-overlay').addClass('is--visible');
+    //         }, 3000); // Adjust the delay as needed
+    //     }
+    // });
 
     // Auto hide app cover on load
     function hideAppCoverDelay() {
