@@ -35,7 +35,7 @@ $(document).ready(function() {
     }
 
     //ChatgptAdd
-    // // Make the grid visible after the section with class 'section cover' is loaded
+    // Make the grid visible after the section with class 'section cover' is loaded
     // $(window).on('load', function() {
     //     if ($('.section.cover').length > 0) {
     //         setTimeout(function() {
@@ -93,6 +93,18 @@ $(document).ready(function() {
             scrollToValues();
         }
     });
+
+    // Attach event to navigation item
+$('.app-nav .item.collage-scroll').click(function () {
+    if ($('body').hasClass('mobile-nav--is--visible')) {
+        function scrollDelay() {
+            window.setTimeout(scrollToShowcase, 300);
+        }
+        scrollDelay();
+    } else {
+        scrollToShowcase();
+    }
+});
 
     // Scroll to Background from app nav
     $('.app-nav .item.background').click(function() {
@@ -442,6 +454,13 @@ function scrollToValues() {
     // $('html, body').animate({ scrollTop: $('.section.values').offset().top - 90 }, 750, 'easeOutCubic');
     $('html, body').animate({
         scrollTop: $('.section.values').offset().top
+    }, 750, 'easeOutCubic');
+}
+
+// Scroll to Showcase
+function scrollToShowcase() {
+    $('html, body').animate({
+        scrollTop: $('.section.collage-scroll').offset().top
     }, 750, 'easeOutCubic');
 }
 
