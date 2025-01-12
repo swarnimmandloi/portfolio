@@ -71,10 +71,62 @@
       .inline-image {
         display: inline-block; /* or inline */
     height: 1em;
-    vertical-align: middle;
+    
+    vertical-align: bottom;
     width: auto;
     border-radius: 8px;
       }
+
+
+       /* ———————————————————————————— */
+  /* INFINITE SCROLL COLLAGE STYLES  */
+  /* ———————————————————————————— */
+
+  .collage-scroll {
+    /* Just a wrapper <section> if you want spacing or background color */
+    padding: 40px 0;  /* optional spacing */
+    background-color: transparent; 
+  }
+
+  .slider {
+    width: 100vw;       /* full viewport width */
+    overflow: hidden;   /* hides images that scroll out of view */
+    margin: 0 auto;     /* center, if your layout allows */
+    position: relative; /* optional if you want more advanced positioning */
+  }
+
+  .slide-track {
+    display: flex;
+    /* If you have 4 total slides (2 unique images repeated):
+       4 slides * 100vw each = 400vw. Adjust if you add more images. */
+    width: 400vw; 
+    animation: scroll-left 25s linear infinite;
+  }
+
+  .slide {
+    width: 100vw;     /* each image takes entire viewport width */
+    flex-shrink: 0;   /* ensures each image won't shrink down */
+  }
+
+  .slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* The keyframes for scrolling left (normal speed) */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      /* 2 unique images => 2 * 100vw = 200vw for the first set
+         so we scroll -200vw to reveal the 2nd repeated set */
+      transform: translateX(-100vw);
+    }
+  }
+
+ 
   </style>
 </head>
 
@@ -112,7 +164,7 @@
         <div class="content">
             <div class="item intro is--active">Intro</div>
             
-            
+            <div class="item collage-scroll">Showcase</div>
             <div class="item references">Work</div>
             <div class="item about">Explorations</div>
             <div class="item contact">Contact</div>
@@ -157,18 +209,42 @@
                 </div>
 
                 <div class="texts">
-                    <h1 class="text anyone is--visible">Designer with over 6 years of experience, coming from a development<img src="data\gifHomepage\1.gif" alt="Experience" class="inline-image">background, focused on delivering elegant, high-quality solutions.</h1>
-                    <h1 class="text recruiters">Focused on user-centered solutions with the highest impact. I collaborate with cross-functional teams<img src="data\gifHomepage\2.webp" alt="Experience" class="inline-image">to ensure quality and deliver results.</h1>
-                    <h1 class="text design-directors">Having full-stack and cloud experience, I<img src="data\gifHomepage\3.webp" alt="Experience" class="inline-image">developed this portfolio and enjoy collaborating with engineering teams to implement designs.</h1>
-                    <h1 class="text product-designers">Blending code, AI, and tools to create unique 2D and 3D animations. Always eager to learn new tools and push<img src="data\gifHomepage\4.gif" alt="Experience" class="inline-image">creative boundaries.</h1>
+                    <h1 class="text anyone is--visible">Designer with over 6 years of experience, coming from a development <img src="data\gifHomepage\1.gif" alt="Experience" class="inline-image"> background, focused on delivering elegant, high-quality solutions.</h1>
+                    <h1 class="text recruiters">Focused on user-centered solutions with the highest impact. I collaborate with cross-functional teams <img src="data\gifHomepage\2.webp" alt="Experience" class="inline-image"> to ensure quality and deliver results.</h1>
+                    <h1 class="text design-directors">Having full-stack and cloud experience, I <img src="data\gifHomepage\3.webp" alt="Experience" class="inline-image"> developed this portfolio and enjoy collaborating with engineering teams to implement designs.</h1>
+                    <h1 class="text product-designers">Blending code, AI, and tools to create unique 2D and 3D animations. Always eager to learn new tools and push <img src="data\gifHomepage\4.gif" alt="Experience" class="inline-image"> creative boundaries.</h1>
                     
-                    <h1 class="text engineers">Passionate about<img src="data\gifHomepage\5_1.png" alt="Experience" class="inline-image"> <img src="data\gifHomepage\5_2.png" alt="Experience" class="inline-image">storytelling, experiment with ideas, and express my creativity while connecting with others through engaging narratives.</h1>
-                    <h1 class="text dyslexic">With a gift for creativity, limitless imagination, and thinking outside the box, connecting<img src="data\gifHomepage\6.gif" alt="Experience" class="inline-image">seemingly diverse ideas to craft innovative solutions.</h1>
+                    <h1 class="text engineers">Passionate about <img src="data\gifHomepage\5_1.png" alt="Experience" class="inline-image"> <img src="data\gifHomepage\5_2.png" alt="Experience" class="inline-image"> storytelling, experiment with ideas, and express my creativity while connecting with others through engaging narratives.</h1>
+                    <h1 class="text dyslexic">With a gift for creativity, limitless imagination, and thinking outside the box, connecting <img src="data\gifHomepage\6.gif" alt="Experience" class="inline-image"> seemingly diverse ideas to craft innovative solutions.</h1>
                 </div>
 
             </div>
            
         </section>
+
+        <!-- Example: place inside <body> after your other sections -->
+<section class="section collage-scroll">
+  <div class="slider">
+    <div class="slide-track">
+      <!-- First set of images -->
+      <div class="slide">
+        <img src="assets\work\work2.png" alt="Image 1">
+      </div>
+      <div class="slide">
+        <img src="assets\work\work2.png" alt="Image 2">
+      </div>
+
+      <!-- Repeat the same images for the loop -->
+      <div class="slide">
+        <img src="assets\work\work2.png" alt="Image 1">
+      </div>
+      <div class="slide">
+        <img src="assets\work\work2.png" alt="Image 2">
+      </div>
+    </div>
+  </div>
+</section>
+
 
         
 
