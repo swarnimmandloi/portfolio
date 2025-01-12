@@ -649,6 +649,7 @@ $(window).on('load resize scroll', function() {
 
     var appNavItem = $('.app-nav .item');
     var sectionIntro = $('.app-main .section.intro');
+    var sectionCollageScroll = $('.app-main .section.collage-scroll');
     var sectionReferences = $('.app-main .section.references');
     var sectionPersonalwork = $('.app-main .section.personalwork');
     var sectionContact = $('.app-main .section.contact');
@@ -658,6 +659,9 @@ $(window).on('load resize scroll', function() {
     if (appMainScrollTop < sectionIntro.height() / 2) {
         // If we're in the top half of the intro section, keep Intro active
         $('.app-nav .item.intro').addClass('is--active');
+    } else if (sectionCollageScroll.offset().top <= appMainScrollMiddle &&
+               sectionCollageScroll.offset().top + sectionCollageScroll.height() > appMainScrollMiddle) {
+        $('.app-nav .item.collage-scroll').addClass('is--active'); // Highlight the collage-scroll section
     } else if (sectionReferences.offset().top <= appMainScrollMiddle && 
                sectionReferences.offset().top + sectionReferences.height() > appMainScrollMiddle) {
         $('.app-nav .item.references').addClass('is--active');
